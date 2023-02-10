@@ -7,7 +7,7 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/ds-theme-1/main
 
 -- fastn.dependency: fifthtry.github.io/fastn-typography as typo
 
--- fastn.dependency: fifthtry.github.io/fastn-ui as fastn-ui
+-- fastn.dependency: fifthtry.github.io/typography as tf
 
 
 -- fastn.auto-import: fastn
@@ -25,7 +25,7 @@ icon: /static/header/why-menu-img.svg
 
 ## Why fastn Child: index.html
 
-- ui: /build/
+- UI: /build/
 icon: /static/toc.svg
   - Component Library: /events/
     - Component Library: /learn/
@@ -37,6 +37,17 @@ icon: /static/toc.svg
   - Front end infrastructure: /build/
   - Front end infrastructure: /build/
 
+- API: /build/
+icon: /static/toc.svg
+  - Component Library: /events/
+    - Component Library: /learn/
+    - Component Library: /learn/
+    - Component Library: /learn/
+    - Component Library: /learn/
+  - Front end infrastructure: /build/
+    - Component Library: /learn/
+  - Front end infrastructure: /build/
+  - Front end infrastructure: /build/
   
 ## How to use fastn: /sample-1/
 

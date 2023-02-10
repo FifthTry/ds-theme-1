@@ -2,9 +2,17 @@
 -- import: fastn/processors as pr
 -- import: typo
 -- import: fifthtry.github.io/ds-theme-1/assets
--- import: fastn-ui/typography as tf
+-- import: tf
 
 -- integer $width: 1160
+
+-- string web-url: https://fifthtry.github.io/fastn-ui/
+
+-- string site-name: Doc Site
+
+-- optional ftd.image-src site-logo: NULL
+
+-- string site-url: /
 
 -- pr.sitemap-data sitemap:
 $processor$: pr.full-sitemap
@@ -45,6 +53,30 @@ Body of heading level 1
 
 -- end: h1
 
+-- h2: Heading Level 2
+
+Body of heading level 2
+
+-- end: h2
+
+-- h3: Heading Level 3
+
+Body of heading level 3
+
+-- end: h3
+
+-- h4: Heading Level 4
+
+Body of heading level 4
+
+-- end: h4
+
+-- h4: Heading Level 4
+
+Body of heading level 4
+
+-- end: h4
+
 -- markdown: 
 
 This is body of markdown component.
@@ -70,8 +102,8 @@ optional pr.toc-item current-subsection: $sitemap.current-subsection
 optional pr.toc-item current-page: $sitemap.current-page
 pr.toc-item list toc: $sitemap.toc
 ;;pr.toc-item list footer-toc: $footer-toc.sections
-optional ftd.image-src logo: 
-optional string sitename: Fastn
+optional ftd.image-src logo: $site-logo
+optional string sitename: $site-name
 string login-button: Get Started
 integer width: $width
 children wrapper:
@@ -80,10 +112,13 @@ ftd.type-data types: $typo.types
 boolean $show-mobile-menu: false
 string web-text: Website
 ftd.image-src web-logo:  $assets.files.static.doc-cta-icon.svg
-string web-url: /
+optional string web-url: $web-url
+optional string site-url: $site-url
 
 -- ftd.column:
 width: fill-container
+
+-- dark-mode-switcher-float:
 
 -- doc-page-desktop: $doc-page.title
 if: {ftd.device != "mobile"}
@@ -106,6 +141,7 @@ $show-mobile-menu: $doc-page.show-mobile-menu
 web-text: $doc-page.web-text
 web-url: $doc-page.web-url
 web-logo: $doc-page.web-logo
+site-url: $doc-page.site-url
 
 -- doc-page-mobile: $doc-page.title
 if: {ftd.device == "mobile"}
@@ -128,6 +164,7 @@ $show-mobile-menu: $doc-page.show-mobile-menu
 web-text: $doc-page.web-text
 web-url: $doc-page.web-url
 web-logo: $doc-page.web-logo
+site-url: $doc-page.site-url
 
 -- end: ftd.column
 
@@ -164,6 +201,7 @@ boolean $show-mobile-menu: false
 string web-text: 
 ftd.image-src web-logo:  
 string web-url:
+optional string site-url:
 
 -- ftd.column:
 width: fill-container
@@ -192,6 +230,7 @@ width: $doc-page-desktop.width
 web-text: $doc-page-desktop.web-text
 web-url: $doc-page-desktop.web-url
 web-logo: $doc-page-desktop.web-logo
+site-url: $doc-page-desktop.site-url
 
 -- ftd.row: 
 width: fill-container
@@ -201,6 +240,12 @@ padding-top.px: 100
 
 -- ftd.column:
 padding-horizontal.px: 24
+;;sticky: true
+;;top.px: 0
+;;left.px: 24
+;;min-height.fixed.calc: 100vh - 0px
+;;overflow-y: auto
+;;anchor: parent
 
 -- render-toc:
 $loop$: $doc-page-desktop.sections as $obj
@@ -264,7 +309,7 @@ optional pr.toc-item current-page:
 pr.toc-item list toc:
 ;;pr.toc-item list footer-toc: $footer-toc.sections
 optional ftd.image-src logo: 
-optional string sitename: Fastn
+optional string sitename: 
 string login-button: Get Started
 integer width: $width
 children wrapper:
@@ -274,6 +319,7 @@ boolean $show-mobile-menu: false
 string web-text: 
 ftd.image-src web-logo:  
 string web-url:
+optional string site-url: 
 
 -- ftd.column:
 width: fill-container
@@ -297,6 +343,7 @@ width: $doc-page-mobile.width
 web-text: $doc-page-mobile.web-text
 web-url: $doc-page-mobile.web-url
 web-logo: $doc-page-mobile.web-logo
+site-url: $doc-page-mobile.site-url
 
 -- ftd.column: 
 width: fill-container
@@ -314,7 +361,7 @@ margin-top.px: 20
 -- ftd.column:
 width: fill-container
 min-height.fixed.calc: 100vh
-spacing.fixed.px: 120
+spacing.fixed.px: 24
 children: $doc-page-mobile.wrapper
 
 -- end: ftd.column
@@ -381,7 +428,7 @@ toc: $obj
 
 -- component toc-page:
 pr.toc-item toc:
-boolean $show-toc: true
+boolean $show-toc: false
 
 -- ftd.column:
 min-width.fixed.px: 255
@@ -489,7 +536,7 @@ width.fixed.px: 20
 background.solid: $inherited.colors.accent.primary
 border-radius.px: 100
 anchor: parent
-top.px: 8
+top.px: 0
 left.px: -34
 
 -- end: ftd.column
@@ -599,6 +646,7 @@ integer width: $width
 string web-text: 
 ftd.image-src web-logo:  
 string web-url:
+optional string site-url:
 
 -- ftd.column:
 width: fill-container
@@ -617,6 +665,7 @@ width: $header-fastn.width
 web-text: $header-fastn.web-text
 web-url: $header-fastn.web-url
 web-logo: $header-fastn.web-logo
+site-url: $header-fastn.site-url
 
 -- header-fastn-mobile: $header-fastn.title
 if: {ftd.device == "mobile"}
@@ -633,6 +682,7 @@ width: $header-fastn.width
 web-text: $header-fastn.web-text
 web-url: $header-fastn.web-url
 web-logo: $header-fastn.web-logo
+site-url: $header-fastn.site-url
 
 -- header-menu:
 if: {header-fastn.show-mobile-menu}
@@ -640,6 +690,7 @@ logo: $header-fastn.logo
 sitename: $header-fastn.sitename
 sections: $header-fastn.sections
 $show-mobile-menu: $header-fastn.show-mobile-menu
+site-url: $header-fastn.site-url
 
 -- end: ftd.column
 
@@ -662,6 +713,7 @@ boolean $show-section: false
 boolean $show-toc: false
 pr.toc-item list sections:
 optional pr.toc-item current-section: 
+optional string site-url: 
 
 -- ftd.column:
 width: fill-container
@@ -686,6 +738,7 @@ width: fill-container
 if: { header-menu.sitename != NULL && header-menu.logo == NULL }
 role: $inherited.types.heading-small
 color: $inherited.colors.text
+link: $$header-menu.site-url
 
 -- ftd.image:
 if: { header-menu.logo != NULL }
@@ -982,6 +1035,7 @@ boolean $show-mobile-menu:
 string web-text: 
 ftd.image-src web-logo:  
 string web-url:
+optional string site-url:
 
 -- ftd.column:
 width: fill-container
@@ -996,12 +1050,14 @@ width: fill-container
 if: { header-fastn-mobile.sitename != NULL && header-fastn-mobile.logo == NULL }
 role: $inherited.types.heading-large
 color: $inherited.colors.text
+link: $header-fastn-mobile.site-url
 
 -- ftd.image:
 if: { header-fastn-mobile.logo != NULL }
 src: $header-fastn-mobile.logo
 width.fixed.px: 140
 height.fixed.px: 40
+link: $header-fastn-mobile.site-url
 
 -- end: ftd.column
 
@@ -1094,6 +1150,7 @@ integer width: $width
 string web-text: 
 ftd.image-src web-logo:  
 string web-url:
+optional string site-url:
 
 -- ftd.column:
 width: fill-container
@@ -1112,12 +1169,14 @@ margin-right.px: 24
 if: { header-fastn-desktop.sitename != NULL && header-fastn-desktop.logo == NULL }
 role: $inherited.types.heading-small
 color: $inherited.colors.text
+link: $header-fastn-desktop.site-url
 
 -- ftd.image:
 if: { header-fastn-desktop.logo != NULL }
 src: $header-fastn-desktop.logo
 width.fixed.px: 140
 height.fixed.px: 40
+link: $header-fastn-desktop.site-url
 
 -- end: ftd.row
 
@@ -1418,7 +1477,6 @@ string lang:
 padding-bottom.px: 12
 padding-top.px: 12
 width: fill-container
-margin-top.px: 24
 
 -- ftd.text: $code.caption
 if: {code.caption != NULL}
@@ -1617,7 +1675,7 @@ $h3.body
 caption title:
 optional body body:
 
--- tf.h4: $h3.title
+-- tf.h4: $h4.title
 
 $h4.body
 
@@ -1734,3 +1792,58 @@ border-radius.px: 3
 
 
 
+
+
+
+
+
+-- component dark-mode-switcher-float:
+
+-- ftd.row:
+anchor: window
+right.px: 50
+bottom.px: 50
+padding.px: 10
+background.solid: $inherited.colors.background.base
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+z-index: 99999999999999
+
+-- ftd.row:
+if: { ftd.follow-system-dark-mode }
+$on-click$: $ftd.enable-light-mode()
+
+-- ftd.image:
+src: https://raw.githubusercontent.com/FifthTry/dark-mode-switcher/main/static/system-mode-active-dark.png
+height.fixed.px: 18
+align-self: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { !ftd.dark-mode && !ftd.follow-system-dark-mode }
+$on-click$: $ftd.enable-dark-mode()
+
+-- ftd.image:
+src: https://raw.githubusercontent.com/FifthTry/dark-mode-switcher/main/static/light-mode-active-dark.png
+height.fixed.px: 18
+align-self: center
+
+-- end: ftd.row
+
+
+-- ftd.row:
+if: { ftd.dark-mode && !ftd.follow-system-dark-mode }
+$on-click$: $ftd.enable-system-mode()
+
+-- ftd.image:
+src: https://raw.githubusercontent.com/FifthTry/dark-mode-switcher/main/static/dark-mode-active-dark.png
+height.fixed.px: 18
+align-self: center
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: dark-mode-switcher-float
