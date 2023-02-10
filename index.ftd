@@ -1079,9 +1079,11 @@ wrap: true
 padding-top.px: 31
 padding-bottom.px: 43
 
--- subsections-links:
+-- subsections-links: $obj.title
 $loop$: $header-fastn-mobile.sections as $obj
 item: $obj.children
+is-active: $obj.is-active
+url: $obj.url
 
 -- end: ftd.row
 
@@ -1202,12 +1204,14 @@ width: fill-container
 -- ftd.row:
 width: fill-container
 spacing.fixed.px: 28
-padding-top.px: 31
-padding-bottom.px: 43
+padding-top.px: 30
+padding-bottom.px: 42
 
--- subsections-links:
+-- subsections-links: $obj.title
 $loop$: $header-fastn-desktop.sections as $obj
 item: $obj.children
+is-active: $obj.is-active
+url: $obj.url
 
 -- end: ftd.row
 
@@ -1263,17 +1267,43 @@ color: $inherited.colors.text.dark
 
 
 -- component subsections-links:
+caption title:
+optional boolean is-active:
+optional string url: 
 pr.toc-item list item:
 
 -- ftd.column:
 
--- subsections-links-desktop:
+-- ftd.row:
+spacing.fixed.px: 12
+
+-- ftd.text: $subsections-links.title
+if: { subsections-links.is-active }
+color: $inherited.colors.text
+color if { subsections-links.is-active }: $inherited.colors.cta-primary.base
+role: $inherited.types.button-medium
+white-space: nowrap
+link: $subsections-links.url
+
+-- ftd.text: /
+if: { subsections-links.is-active }
+color: $inherited.colors.text
+role: $inherited.types.button-medium
+
+-- subsections-links-desktop: $subsections-links.title
 if: {ftd.device != "mobile"}
 item: $subsections-links.item
+is-active: $subsections-links.is-active
+url: $subsections-links.url
 
--- subsections-links-mobile:
+
+-- subsections-links-mobile: $subsections-links.title
 if: {ftd.device == "mobile"}
 item: $subsections-links.item
+is-active: $subsections-links.is-active
+url: $subsections-links.url
+
+-- end: ftd.row
 
 -- end: ftd.column
 
@@ -1289,15 +1319,20 @@ item: $subsections-links.item
 
 
 -- component subsections-links-desktop:
+caption title:
+optional boolean is-active:
+optional string url: 
 pr.toc-item list item:
 
 -- ftd.row:
 width: fill-container
 spacing.fixed.px: 12
 
--- subsections-items:
+-- subsections-items: $subsections-links-desktop.title
 $loop$: $subsections-links-desktop.item as $obj
 item: $obj
+is-active: $subsections-links-desktop.is-active
+url: $subsections-links-desktop.url
 
 -- end: ftd.row
 
@@ -1313,6 +1348,9 @@ item: $obj
 
 
 -- component subsections-links-mobile:
+caption title:
+optional boolean is-active:
+optional string url: 
 pr.toc-item list item:
 
 -- ftd.row:
@@ -1320,9 +1358,11 @@ width: fill-container
 wrap: true
 spacing.fixed.px: 8
 
--- subsections-items:
+-- subsections-items: subsections-links-mobile.title
 $loop$: $subsections-links-mobile.item as $obj
 item: $obj
+is-active: $subsections-links-mobile.is-active
+url: $subsections-links-mobile.url
 
 -- end: ftd.row
 
@@ -1335,17 +1375,24 @@ item: $obj
 
 
 -- component subsections-items:
+caption title:
+optional boolean is-active:
+optional string url: 
 pr.toc-item item:
 
 -- ftd.column:
 
--- subsections-items-desktop:
+-- subsections-items-desktop: $subsections-items.title
 if: { ftd.device != "mobile" }
 item: $subsections-items.item
+is-active: $subsections-items.is-active
+url: $subsections-items.url
 
--- subsections-items-mobile:
+-- subsections-items-mobile: $subsections-items.title
 if: { ftd.device == "mobile" }
 item: $subsections-items.item
+is-active: $subsections-items.is-active
+url: $subsections-items.url
 
 -- end: ftd.column
 
@@ -1353,6 +1400,9 @@ item: $subsections-items.item
 
 
 -- component subsections-items-desktop:
+caption title:
+optional boolean is-active:
+optional string url: 
 pr.toc-item item:
 
 -- ftd.row:
@@ -1364,7 +1414,6 @@ if: {subsections-items-desktop.item.url == NULL}
 color: $inherited.colors.text
 color if { subsections-items-desktop.item.is-active }: $inherited.colors.cta-primary.base
 role: $inherited.types.button-medium
-width if {ftd.device != "mobile"}: fill-container
 white-space: nowrap
 
 -- ftd.text: $subsections-items-desktop.item.title
@@ -1373,10 +1422,10 @@ color: $inherited.colors.text
 link: $subsections-items-desktop.item.url
 color if { subsections-items-desktop.item.is-active }: $inherited.colors.cta-primary.base
 role: $inherited.types.button-medium
-width if {ftd.device != "mobile"}: fill-container
 white-space: nowrap
 
 -- ftd.text: /
+if: {subsections-items-desktop.item.url != NULL}
 color: $inherited.colors.text
 role: $inherited.types.button-medium
 
@@ -1388,6 +1437,9 @@ role: $inherited.types.button-medium
 
 
 -- component subsections-items-mobile:
+caption title:
+optional boolean is-active:
+optional string url: 
 pr.toc-item item:
 
 -- ftd.row:
@@ -1412,6 +1464,7 @@ width if {ftd.device != "mobile"}: fill-container
 white-space: nowrap
 
 -- ftd.text: /
+if: {subsections-items-mobile.item.title != NULL}
 color: $inherited.colors.text
 role: $inherited.types.button-medium
 

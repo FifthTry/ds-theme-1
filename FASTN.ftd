@@ -23,7 +23,7 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/ds-theme-1/main
 # Why fastn: index.html
 icon: /static/header/why-menu-img.svg
 
-## Why fastn Child: index.html
+## Why fastn Child: /learn/
 
 - UI: /build/
 icon: /static/toc.svg
