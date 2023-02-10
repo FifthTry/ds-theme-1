@@ -27,7 +27,7 @@ icon: /static/header/why-menu-img.svg
 
 - UI: /build/
 icon: /static/toc.svg
-  - Component Library: /events/
+  - Component Library: /use-cases/
     - Component Library: /learn/
     - Component Library: /learn/
     - Component Library: /learn/
@@ -39,7 +39,7 @@ icon: /static/toc.svg
 
 - API: /build/
 icon: /static/toc.svg
-  - Component Library: /events/
+  - Component Library: /use-cases/
     - Component Library: /learn/
     - Component Library: /learn/
     - Component Library: /learn/
