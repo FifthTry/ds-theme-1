@@ -26,7 +26,7 @@ $processor$: pr.full-sitemap
 
 
 
--- doc-page:  Documentation
+-- page:  Documentation
 
 Lorem ipsum dolor sit amet consectetur. Molestie massa pretium adipiscing magna 
 at. Amet varius ante fringilla egestas eu. Purus tristique rhoncus in mauris. 
@@ -81,7 +81,7 @@ Body of heading level 4
 
 This is body of markdown component.
 
--- end: doc-page
+-- end: page
 
 
 
@@ -92,7 +92,7 @@ This is body of markdown component.
 
 
 
--- component doc-page:
+-- component page:
 optional caption title: 
 optional body body: 
 pr.toc-item list sections: $sitemap.sections
@@ -120,55 +120,55 @@ width: fill-container
 
 -- dark-mode-switcher-float:
 
--- doc-page-desktop: $doc-page.title
+-- doc-page-desktop: $page.title
 if: {ftd.device != "mobile"}
-body: $doc-page.body
-sections: $doc-page.sections
-sub-sections: $doc-page.sub-sections
-current-section: $doc-page.current-section
-current-subsection: $doc-page.current-subsection
-current-page: $doc-page.current-page
-toc: $doc-page.toc
-;;footer-toc: $doc-page.footer-toc
-logo:  $doc-page.logo
-sitename: $doc-page.sitename
-login-button: $doc-page.login-button
-width: $doc-page.width
-wrapper: $doc-page.wrapper
-colors: $doc-page.colors
-types: $doc-page.types
-$show-mobile-menu: $doc-page.show-mobile-menu
-web-text: $doc-page.web-text
-web-url: $doc-page.web-url
-web-logo: $doc-page.web-logo
-site-url: $doc-page.site-url
+body: $page.body
+sections: $page.sections
+sub-sections: $page.sub-sections
+current-section: $page.current-section
+current-subsection: $page.current-subsection
+current-page: $page.current-page
+toc: $page.toc
+;;footer-toc: $page.footer-toc
+logo:  $page.logo
+sitename: $page.sitename
+login-button: $page.login-button
+width: $page.width
+wrapper: $page.wrapper
+colors: $page.colors
+types: $page.types
+$show-mobile-menu: $page.show-mobile-menu
+web-text: $page.web-text
+web-url: $page.web-url
+web-logo: $page.web-logo
+site-url: $page.site-url
 
--- doc-page-mobile: $doc-page.title
+-- doc-page-mobile: $page.title
 if: {ftd.device == "mobile"}
-body: $doc-page.body
-sections: $doc-page.sections
-sub-sections: $doc-page.sub-sections
-current-section: $doc-page.current-section
-current-subsection: $doc-page.current-subsection
-current-page: $doc-page.current-page
-toc: $doc-page.toc
-;;footer-toc: $doc-page.footer-toc
-logo:  $doc-page.logo
-sitename: $doc-page.sitename
-login-button: $doc-page.login-button
-width: $doc-page.width
-wrapper: $doc-page.wrapper
-colors: $doc-page.colors
-types: $doc-page.types
-$show-mobile-menu: $doc-page.show-mobile-menu
-web-text: $doc-page.web-text
-web-url: $doc-page.web-url
-web-logo: $doc-page.web-logo
-site-url: $doc-page.site-url
+body: $page.body
+sections: $page.sections
+sub-sections: $page.sub-sections
+current-section: $page.current-section
+current-subsection: $page.current-subsection
+current-page: $page.current-page
+toc: $page.toc
+;;footer-toc: $page.footer-toc
+logo:  $page.logo
+sitename: $page.sitename
+login-button: $page.login-button
+width: $page.width
+wrapper: $page.wrapper
+colors: $page.colors
+types: $page.types
+$show-mobile-menu: $page.show-mobile-menu
+web-text: $page.web-text
+web-url: $page.web-url
+web-logo: $page.web-logo
+site-url: $page.site-url
 
 -- end: ftd.column
 
--- end: doc-page
+-- end: page
 
 
 
