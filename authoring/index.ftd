@@ -1,0 +1,63 @@
+-- import: fifthtry.github.io/ds-theme-1/assets
+-- import: fifthtry.github.io/ds-theme-1 as ds
+
+
+
+-- ds.page: Authoring
+
+
+Lorem ipsum dolor sit amet consectetur. Molestie massa pretium adipiscing magna 
+at. Amet varius ante fringilla egestas eu. Purus tristique rhoncus in mauris. 
+Quam eget nulla euismod purus viverra phasellus. Massa orci curabitur arcu nibh 
+viverra nibh. At blandit sagittis et sollicitudin. Ornare ullamcorper mollis 
+congue feugiat in vitae adipiscing aenean. Nunc sapien sapien rutrum magnis at 
+aliquam eget tincidunt suspendisse. Turpis turpis et tincidunt justo maecenas 
+egestas porta. Varius fusce vivamus velit egestas fames viverra risus urna 
+tellus. Sagittis pellentesque vulputate egestas enim sollicitudin. Lobortis 
+pretium elementum nisi non mauris proin placerat vitae.
+
+
+-- ds.code:
+lang: ftd
+
+
+\-- ftd.text: Some title here
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- ds.h1: Heading Level 1
+
+Body of heading level 1
+
+-- end: ds.h1
+
+-- ds.h2: Heading Level 2
+
+Body of heading level 2
+
+-- end: ds.h2
+
+-- ds.h3: Heading Level 3
+
+Body of heading level 3
+
+-- end: ds.h3
+
+-- ds.h4: Heading Level 4
+
+Body of heading level 4
+
+-- end: ds.h4
+
+-- ds.h4: Heading Level 4
+
+Body of heading level 4
+
+-- end: ds.h4
+
+-- ds.markdown: 
+
+This is body of markdown component.
+
+
+-- end: ds.page
