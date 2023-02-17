@@ -439,7 +439,7 @@ boolean $show-toc: false
 
 -- ftd.column:
 width.fixed.px: 255
-spacing.fixed.px: 70
+spacing.fixed.px: 35
 
 -- ftd.row:
 spacing.fixed.px: 24
@@ -453,6 +453,19 @@ width: fill-container
 if: {toc-page.toc.font-icon != NULL}
 src: $toc-page.toc.font-icon
 align-self: center
+
+-- ftd.column:
+color: $inherited.colors.text
+height.fixed.px: 8
+width.fixed.px: 8
+background.solid: $inherited.colors.text
+background.solid if {toc-page.toc.is-active} : $inherited.colors.accent.primary
+border-radius.px: 100
+anchor: parent
+top.px: 8
+left.px: -29
+
+-- end: ftd.column
 
 -- ftd.text: $toc-page.toc.title
 if: { toc-page.toc.url != NULL}
@@ -535,6 +548,7 @@ color: $inherited.colors.text
 height.fixed.px: 8
 width.fixed.px: 8
 background.solid: $inherited.colors.text
+background.solid if {toc-page-children.children.is-active } : $inherited.colors.accent.primary
 border-radius.px: 100
 anchor: parent
 top.px: 8
