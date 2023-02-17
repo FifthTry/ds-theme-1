@@ -1745,6 +1745,7 @@ spacing.fixed.px: 60
 -- ftd.column:
 width.fixed.px: 284
 align-self: start
+z-index: 1
 
 -- ftd.column:
 background.solid if { loop-section-card.mouse-in }: $inherited.colors.custom.four.dark
@@ -1815,6 +1816,7 @@ if: { loop-section-card.show-sub-menu || loop-section-card.is-active}
 align-content: center
 margin-left.px: 38
 margin-top.px: 40
+z-index: 9999999
 
 -- toc-items: 
 if: { !ftd.is_empty(loop-section-card.toc) }
