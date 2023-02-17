@@ -248,6 +248,7 @@ padding-horizontal.px: 24
 ;;anchor: parent
 
 -- render-toc:
+is-active: $obj.is-active
 $loop$: $doc-page-desktop.sections as $obj
 subsection: $obj.children
 
@@ -383,11 +384,14 @@ children: $doc-page-mobile.wrapper
 
 
 -- component render-toc: 
+boolean is-active:
 pr.toc-item list subsection:
 
 -- ftd.column:
+if: {render-toc.is-active}
 
 -- toc-item:
+is-active: $obj.is-active
 $loop$: $render-toc.subsection as $obj
 toc: $obj.children
 
@@ -406,8 +410,10 @@ toc: $obj.children
 
 -- component toc-item:
 pr.toc-item list toc:
+boolean is-active:
 
 -- ftd.column:
+if: {toc-item.is-active}
 spacing.fixed.px: 24
 
 -- toc-page: 
@@ -1416,7 +1422,7 @@ pr.toc-item list item:
 -- ftd.row:
 
 -- ftd.row:
-if: { subsections-items-desktop.item.is-active }
+if: { subsections-items-desktop.is-active }
 width if {ftd.device != "mobile"}: fill-container
 spacing.fixed.px: 12
 
@@ -1442,7 +1448,7 @@ role: $inherited.types.button-medium
 
 -- end: ftd.row
 
--- toc-items-desktop: $obj.title
+/-- toc-items-desktop: $obj.title
 $loop$: $subsections-items-desktop.item as $obj
 item: $obj.children
 is-active: $obj.is-active
@@ -1451,6 +1457,17 @@ url: $obj.url
 -- end: ftd.row
 
 -- end: subsections-items-desktop
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1489,6 +1506,18 @@ role: $inherited.types.button-medium
 -- end: ftd.row
 
 -- end: toc-items-desktop
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
